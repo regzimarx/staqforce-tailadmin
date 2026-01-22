@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laraveldaily/tailadmin-starter-kit",
+    "name": "regzimarx/staqforce-tailadmin",
     "type": "project",
-    "description": "LaravelDaily Starter Kit for the Laravel framework, with TailAdmin components.",
+    "description": "Staqforce TailAdmin Starter Kit for the Laravel framework, with TailAdmin components, Inertia.js, and React.",
     "keywords": [
         "laravel",
         "framework"
