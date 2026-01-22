@@ -194,7 +194,15 @@
 }
 
 @utility menu-item {
-  @apply relative flex items-center w-full gap-3 px-3 py-2 font-medium rounded-lg text-theme-sm;
+  @apply relative flex items-center w-full gap-2 px-2.5 py-1.5 font-medium rounded-lg text-theme-sm;
+}
+
+@utility menu-item-icon-size {
+  @apply flex-shrink-0;
+}
+
+@utility menu-item-text {
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 @utility menu-item-active {
@@ -230,7 +238,7 @@
 }
 
 @utility menu-dropdown-item {
-  @apply relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-theme-sm font-medium;
+  @apply relative flex items-center gap-2 rounded-lg px-2.5 py-2 text-theme-sm font-medium;
 }
 
 @utility menu-dropdown-item-active {
@@ -254,7 +262,7 @@
 }
 
 @utility menu-dropdown-badge {
-  @apply text-success-600 dark:text-success-500 block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase;
+  @apply text-success-600 dark:text-success-500 block rounded-full px-2 py-0.5 text-[10px] font-medium uppercase;
 }
 
 @utility menu-dropdown-badge-active {
@@ -266,7 +274,7 @@
 }
 
 @utility menu-dropdown-badge-pro {
-  @apply text-brand-600 dark:text-brand-500 block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase;
+  @apply text-brand-600 dark:text-brand-500 block rounded-full px-2 py-0.5 text-[10px] font-medium uppercase;
 }
 
 @utility menu-dropdown-badge-pro-active {

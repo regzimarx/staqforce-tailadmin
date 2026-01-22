@@ -7,14 +7,15 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Illuminate\View\View;
+use Inertia\Inertia;
 
 class PasswordController extends Controller
 {
-    public function edit(Request $request): View
+    public function edit(Request $request)
     {
-        return view('pages.auth.settings.password', [
+        return $this->inertia('Settings/Password', [
             'user' => $request->user(),
+            'status' => session('status'),
         ]);
     }
 

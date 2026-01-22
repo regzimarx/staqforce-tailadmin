@@ -10,13 +10,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Illuminate\View\View;
+use Inertia\Inertia;
 
 class RegistrationController extends Controller
 {
-    public function create(): View
+    public function create()
     {
-        return view('pages.auth.signup');
+        if (Auth::check()) {
+            return redirect()->intended(route('dashboard', absolute: false));
+        }
+        
+        return $this->inertia('Auth/Register');
     }
 
     public function store(Request $request): RedirectResponse

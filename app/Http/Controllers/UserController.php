@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
+use Inertia\Inertia;
 
 class UserController extends Controller
 {
@@ -14,7 +15,9 @@ class UserController extends Controller
     {
         $users = User::paginate(10);
 
-        return view('users.index', compact('users'));
+        return $this->inertia('Users/Index', [
+            'users' => $users
+        ]);
     }
 
     /**
@@ -22,7 +25,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        return $this->inertia('Users/Edit', [
+            'user' => $user
+        ]);
     }
 
     /**

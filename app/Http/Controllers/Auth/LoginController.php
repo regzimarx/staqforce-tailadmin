@@ -10,13 +10,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use Illuminate\View\View;
+use Inertia\Inertia;
 
 class LoginController extends Controller
 {
-    public function create(): View
+    public function create()
     {
-        return view('pages.auth.signin');
+        if (Auth::check()) {
+            return redirect()->intended(route('dashboard', absolute: false));
+        }
+        
+        return $this->inertia('Auth/Login');
     }
 
     public function store(Request $request): RedirectResponse
